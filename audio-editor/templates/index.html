@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Automático de Áudio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Editor Automático com Detecção de Silêncios</h1>
+            <p>Ferramenta para remoção automática de silêncios em arquivos de áudio e vídeo</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p>Arraste um arquivo aqui ou clique para selecionar</p>
+                    <p class="file-types">Suporta: MP3, WAV, MP4, AVI, MKV</p>
+                    <input type="file" id="fileInput" accept="audio/*,video/*" hidden>
+                </div>
+                
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">Processando arquivo...</p>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Resultados do Processamento</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Duração Original</h3>
+                        <span id="originalDuration">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Silêncios Detectados</h3>
+                        <span id="silencesCount">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tempo Economizado</h3>
+                        <span id="timeSaved">--</span>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <h3>Relatório Visual</h3>
+                    <div class="report-container">
+                        <img id="reportImage" src="" alt="Relatório de Processamento">
+                    </div>
+                </div>
+
+                <div class="download-section">
+                    <button id="downloadBtn" class="btn-primary">Baixar Arquivo Processado</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
