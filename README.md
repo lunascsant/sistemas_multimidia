@@ -80,7 +80,7 @@ audio-editor/
 - **Saída:** Vídeo de 3 minutos com silêncios removidos
 - **Resultado:** Áudio e vídeo perfeitamente sincronizados
 
-## Requisitos Atendidos (Trabalho Acadêmico)
+## Requisitos Atendidos
 
 ✅ Aplicação baseada na Web  
 ✅ Codificação/Transcodificação de áudio e vídeo  
